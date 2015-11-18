@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    </head>
+    <body>
+        <div class="containner">
+
+            <div class="base-login">
+                <div class="topper"></div>
+                <div class="bottomer">
+                    <form>
+                        <div class="one-row">
+                            <div class="icon"><img src="assets/icons/user.png"></div>
+                            <div class="input-container" >
+                                <select tabindex="1" id="user"></select>
+                            </div>
+                        </div>
+                        <div class="one-row">
+                            <div class="icon"><img src="assets/icons/key.png"></div>
+                            <div class="input-container">
+                                <input type="password" tabindex="2" id="pass" placeholder="Password" >
+                            </div>
+                        </div>
+                        <div class="one-row smaller">
+                            <button type="submit" tabindex="3" class="btn btn-primary">
+                                Sign in
+                            </button>
+                        </div>
+                    </form>
+                    <div class="one-row smallest" id="error-show"></div>
+                    <div class="bottom"> 
+                        <div class="center-bottom">
+                            <div class="btns">
+                                <img src="assets/icons/action-reboot.png" onclick="javascript: lightdm.restart();">
+                                <img src="assets/icons/action-shutdown.png" onclick="javascript: lightdm.shutdown();">
+                            </div>
+                            <div class="clock" id="nowClock">--:--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="thumb">
+                    <img src="assets/img/avatar.jpg" class="profile-img">
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/jquery-2.1.0.min.js"></script>
+        <script src="assets/js/mock.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>
+            (function() {
+                /* clock */
+                var updateClock = function(){
+                    var now = new Date();
+                    var hours = now.getHours();
+                    var min = now.getMinutes();
+                    min = (min<10)?("0"+min):(min);
+                    document.getElementById('nowClock').innerHTML = hours+":"+min;
+                    console.log(hours+":"+min);
+                };
+
+                setInterval(function(){
+                    updateClock();
+                }, 5000);
+                updateClock();
+
+            })();
+
+        </script>
+    </body>
+</html>
