@@ -14,6 +14,5 @@
     webkit-theme=simple-login-theme
 </pre>
 
-
-=================
+---
 **This theme was based on [lightdm-webkit-google](https://github.com/omgmog/lightdm-webkit-google)**
